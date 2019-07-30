@@ -1,12 +1,10 @@
 @extends('front.template')
-
 @section('pageTitle', 'Registro')
 @yield('content')
 @section('content')
 <div class="container formulario-registro">
     <div class="row justify-content-center">
         <div class="col-12">
-            <div class="card">
 
                 <div class="card-body">
                     <form class="login" method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
@@ -76,6 +74,7 @@
                             </div>
                         </div>
                         <br>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-success">
@@ -83,13 +82,14 @@
                                 </button>
                             </div>
                         </div>
+
                         <div class="col-md-6 offset-md-4">
                           <a class="volver" href="/"> <span><< Home</span> </a>
                         </div>
 
                     </form>
                 </div>
-            </div>
+
 
         </div>
     </div>

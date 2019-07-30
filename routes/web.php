@@ -21,17 +21,7 @@ Route::get('/', function () {
     return view('front.index');
 });
 
-//Registro
 
-Route::get('/register', function () {
-    return view('front.register.index');
-});
-
-//login
-
-Route::get('/login', function () {
-    return view('front.login.index');
-});
 
 //Products
 

@@ -66,11 +66,12 @@ class RegisterController extends Controller
      {
        $request = request();
 
-       // $profileImage = $data['avatar'];
 
        $profileImage = $request->file('avatar');
 
+
        $profileImageName = uniqid('img-') . '.' . $profileImage->extension();
+
 
        $profileImage->storePubliclyAs("public/images", $profileImageName);
 
@@ -78,7 +79,6 @@ class RegisterController extends Controller
        return User::create([
            'name' => $data['name'],
            'email' => $data['email'],
-           // 'country' => $data['country'],
            'avatar' => $profileImageName,
            'password' => Hash::make($data['password']),
        ]);
