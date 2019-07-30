@@ -22,7 +22,7 @@
         <li><a href=register> <span>Registrate</span><i class="fas fa-user-plus"></i></a></li>
         <li><a href=login> <span>ingresá</span><i class="fas fa-user"></i></a></li>
       @else
-        <li><a href=profile> <span>Mi Perfil</span><i class="fas fa-user-circle"></i></a></li>
+        <li><a href=profile> <span>Hola {{ Auth::user()->name }}</span><i class="fas fa-user-circle"></i></a></li>
         <li><a class="dropdown-item" href="{{ route('logout') }}"
             onclick="
             event.preventDefault();
@@ -34,6 +34,7 @@
         <form class="formulario" id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
             @csrf
         </form>
+      
       @endguest
     </ul>
 
