@@ -23,18 +23,20 @@
         <li><a href=login> <span>ingresá</span><i class="fas fa-user"></i></a></li>
       @else
         <li><a href=profile> <span>Mi Perfil</span><i class="fas fa-user-circle"></i></a></li>
-        <a class="dropdown-item fas fa-sign-out-alt href="{{ route('logout') }}"
-           onclick="
+        <li><a class="dropdown-item" href="{{ route('logout') }}"
+            onclick="
             event.preventDefault();
             document.getElementById('logout-form').submit();">
-            {{ __('Logout') }}
+            <span>Salir</span><i class="fas fa-sign-out-alt"></i>
         </a>
+        </li>
 
-        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        <form class="formulario" id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
             @csrf
         </form>
       @endguest
     </ul>
+
   <nav class="menu">
     <ul >
       <li><a href="newarrivals">New arrivals</a></li>
