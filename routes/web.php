@@ -17,7 +17,7 @@ Route::get('/test', function () {
     return view('welcome');
 });
 //La Home
-Route::get('/index', function () {
+Route::get('/', function () {
     return view('front.index');
 });
 
@@ -61,3 +61,7 @@ Route::get('/faq', function () {
 Route::get('/profile', function () {
     return view('front.user.index');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

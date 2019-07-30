@@ -7,15 +7,33 @@
     <ul class="iconos-menu">
       <aside class="cambios">
       CAMBIOS Y DEVOLUCIONES EN TODOS NUESTROS LOCALES
+      <br>
+      <!-- @if (Auth::user())
+      <h1>{{ Auth::user()->name }}</h1>
+      <img src="/storage/images/{{ Auth::user()->avatar }}" width="10">
+      @endif -->
       </aside>
       <li><form class="formulario" method="get" action="procesar.php">
           <input type="text" name="termino_busqueda"> </li>
           <button class="submit-search" type="submit" name="button"> <i class="fas fa-search"></i></button>
           </form>
       <li><a href=#shop><span>Tu Carrito</span>  <i class="fas fa-shopping-cart"></i></a></li>
-      <li><a href=register> <span>Registrate</span><i class="fas fa-user-plus"></i></a></li>
-      <li><a href=login> <span>ingresá</span><i class="fas fa-user"></i></a></li>
-      <li><a href=profile> <span>Mi Perfil</span><i class="fas fa-user-circle"></i></a></li>
+      @guest
+        <li><a href=register> <span>Registrate</span><i class="fas fa-user-plus"></i></a></li>
+        <li><a href=login> <span>ingresá</span><i class="fas fa-user"></i></a></li>
+      @else
+        <li><a href=profile> <span>Mi Perfil</span><i class="fas fa-user-circle"></i></a></li>
+        <a class="dropdown-item fas fa-sign-out-alt href="{{ route('logout') }}"
+           onclick="
+            event.preventDefault();
+            document.getElementById('logout-form').submit();">
+            {{ __('Logout') }}
+        </a>
+
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
+      @endguest
     </ul>
   <nav class="menu">
     <ul >
