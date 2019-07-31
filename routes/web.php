@@ -40,8 +40,12 @@ Route::get('/faq', function () {
 
 //Profile
 Route::get('/profile', function () {
-    return view('front.user.index');
-});
+	if (Auth::user()) {
+		return view('front.user.index');
+	} else {
+		return redirect('/register');
+	}
+})->name('profile');
 
 Auth::routes();
 
