@@ -3,14 +3,20 @@
 @section('pageTitle', 'Crear un producto')
 
 @section('mainContent')
-	<h2>Formulario para crear productos</h2>
+	<p class="listado">Formulario para crear productos</p>
+
+	<div class="container">
+
+
 
 	<form  action="/products" method="post" enctype="multipart/form-data">
 		@csrf
 		<div class="row" >
 			<div class="col-12">
 				<div class="form-group">
-					<label>Nombre del producto</label>
+						<label class="imput-create">Nombre del producto:</label>
+
+						<div class="centrado">
 					<input
 						type="text"
 						name="name"
@@ -22,6 +28,7 @@
 							{{ $message }}
 						</span>
 					@enderror
+						</div>
 
 
 				</div>
@@ -31,7 +38,9 @@
       <br>
 			<div class="col-12">
 				<div class="form-group">
-					<label>Descripción</label>
+					<label class="imput-create">Descripción:</label>
+
+					<div class="centrado">
 					<input
 						type="text"
 						name="description"
@@ -43,15 +52,18 @@
 							{{ $message }}
 						</span>
 					@enderror
-
+					</div>
 				</div>
 				<br>
 			</div>
 
 
+
         <div class="col-12">
           <div class="form-group">
-            <label>Precio</label>
+						  <label  class="imput-create">Precio: </label>
+
+						<div class="centrado">
             <input
               type="text"
               name="price"
@@ -63,12 +75,15 @@
 								{{ $message }}
 							</span>
 						@enderror
+						</div>
 					</div>
 					<br>
 				</div>
 						<div class="col-12">
+								<label class="imput-create">Subí una imagen:</label>
+
 							<div class="form-group">
-								<label>Subí una imagen</label>
+								<div class="centrado">
 								<input
 								 type="file"
 								 name="poster"
@@ -80,12 +95,17 @@
 		 							</span>
 		 						@enderror
 							</div>
+							</div>
 							<br>
 						</div>
 
+
           <div class="col-12">
             <div class="form-group">
-              <label>Colores: </label>
+							<label class="imput-create">Colores: </label>
+
+								<div class="centrado">
+
 							@error('colors')
 							 <span class="text-danger">
 								 {{ $message }}
@@ -98,13 +118,16 @@
 								@endforeach
 								<br>
               </p>
+							  </div>
             </div>
             <br>
             </div>
 
 						<div class="col-12">
 	            <div class="form-group">
-	              <label>Talles: </label>
+	              <label class="imput-create">Talles: </label>
+
+								<div class="centrado">
 								@error('sizes')
 								 <span class="text-danger">
 									 {{ $message }}
@@ -116,26 +139,39 @@
 	                @endforeach
 	              </p>
 	            </div>
+							 </div>
 							<br>
 							</div>
 
 							<div class="col-12">
 								<div class="form-group">
-									<label>Categorias: </label>
+									<label class="imput-create">Categorias: </label>
+								<br>
+									<div class="centrado">
 									<select class="form-control" name="categories">
 										@foreach ($categories as $category)
 										<option value="{{ $category->id }}">{{ $category->name }}</option>
 										@endforeach
 									</select>
 								</div>
+								</div>
 	            <br>
 	            </div>
+								</div>
+								<div class="boton-crear-centrado">
 							<div class="col-12">
-								<button type="submit" class="btn btn-success">Guardar producto</button>
+
+								<button type="submit" class="boton-crear">Guardar producto</button>
+
 							</div>
-			</div>
+							</div>
+							<br>
+							<br>
+
 
 	</form>
+
+		</div>
 
 
 @endsection

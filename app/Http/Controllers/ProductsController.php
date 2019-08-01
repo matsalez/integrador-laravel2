@@ -16,7 +16,7 @@ class ProductsController extends Controller
      */
     public function index()
     {
-      $products = Product::simplePaginate(5);
+      $products = Product::simplePaginate(8);
       $totalProducts = count(Product::all());
 
       return view('front/products/allproducts', compact('products','totalProducts'));
@@ -24,9 +24,13 @@ class ProductsController extends Controller
 
     public function show($id)
     {
+      $colors = \App\Color::orderBy('name')->get();
+      $sizes = \App\Size::orderBy('name')->get();
+      $categories = \App\Category::orderBy('name')->get();
+
       $theProduct = Product::find($id);
 
-      return view('front.products.show', compact('theProduct'));
+      return view('front.products.show', compact('theProduct','colors','sizes','categories'));
     }
 
     public function create()
@@ -39,12 +43,7 @@ class ProductsController extends Controller
   		return view('front.products.create', compact('colors','sizes','categories'));
   	}
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
      public function store(Request $request)
    	{
       // dd($request->all());
@@ -108,7 +107,7 @@ class ProductsController extends Controller
       $product->sizes()->attach($request->input('sizes'));
 
   		// 3. Redireccionamos SIEMPRE a una RUTA
-  		return redirect('/products/' . $product->id);
+  		return redirect('/products');
     }
 
 

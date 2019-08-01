@@ -4,16 +4,7 @@
 
 @section('mainContent')
 <br>
-	<div class="listado">Listado de productos</div>
-
-	<p class="cant-productos">En nuestra base de datos hay un total de: {{ $totalProducts }} de productos.</p>
-
-	<div class="boton-crear-centrado">
-
-
-	<a href="/products/create" class="boton-crear">CREAR PRODUCTO</a>
-
-	</div>
+	<div class="listado"></div>
 
         <div class="row">
 
@@ -25,12 +16,11 @@
                 <h3 class="price"> ${{ $product->price }} </h3>
 
                 <div class="boton">
-                <a href="/products/{{ $product->id }}/edit" > EDITAR  </a>
+                <a href="/products/{{ $product->id }}/edit" > COMPRAR  </a>
                 </div>
 
                 <form action="/products/{{ $product->id }}" method="post">
-            			@csrf
-            			{{ method_field('delete') }}
+
 
                   	<button class="boton-borrar" type="submit">BORRAR</button>
 

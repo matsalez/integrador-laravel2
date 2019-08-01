@@ -26,7 +26,7 @@
         <a class="imagen-home" href="newarrivals">
           <img class="home-seccion-img" src="images/foto-06.jpg" alt="lookbook">
           </a>
-          <h2 class="home-title-seccion"> #LOOKBOOK </h2>
+          <h2 class="home-title-seccion"> PANTALONES </h2>
       </div>
     </div>
     <div class="col-lg-3 col-md-6 col-xs-12">
@@ -34,7 +34,7 @@
         <a class="imagen-home" href="newarrivals">
           <img class="home-seccion-img" src="images/foto-07.jpg" alt="coleccion">
             </a>
-          <h2 class="home-title-seccion"> COLECCION </h2>
+          <h2 class="home-title-seccion"> REMERAS </h2>
       </div>
     </div>
     <div class="col-lg-3 col-md-6 col-xs-12">
@@ -42,7 +42,7 @@
         <a class="imagen-home" href="newarrivals">
         <img class="home-seccion-img" src="images/foto-08.jpg" alt="accesorios">
           </a>
-        <h2 class="home-title-seccion"> ACCESORIOS </h2>
+        <h2 class="home-title-seccion"> BUZOS </h2>
       </div>
     </div>
   </div>

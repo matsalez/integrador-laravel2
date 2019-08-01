@@ -1,7 +1,7 @@
 <header class="main-header">
     <input type="checkbox" id="btn-menu">
     <label for="btn-menu" class="fas fa-bars boton-menu"> </label>
-    <a href="index">
+    <a href="/">
       <img class="logo-menu" src="../images/logo.png" alt="logo-isabella">
       </a>
     <ul class="iconos-menu">
@@ -34,23 +34,20 @@
         <form class="formulario" id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
             @csrf
         </form>
-      
+
       @endguest
     </ul>
 
   <nav class="menu">
     <ul >
-      <li><a href="newarrivals">New arrivals</a></li>
-      <li class="submenu"><a href="#coleccion">Colección  <i class="fas fa-angle-down"></i></a>
+      <li><a href="coleccion">Colección</a></li>
+      <li class="submenu"><a href="#coleccion">Categorías  <i class="fas fa-angle-down"></i></a>
          <ul>
+            <li><a href="newarrivals">New arrivals</a></li>
           <li><a href="#pantalones">Pantalones</a></li>
           <li><a href="#remeras">Remeras</a></li>
-          <li><a href="#faldas">Faldas - Shorts</a></li>
           <li><a href="#camperas">Camperas</a></li>
-          <li><a href="#camisas-vestidos">Camisas - Vestidos</a></li>
-          <li><a href="#buzos-Sweaters">Buzos - Sweaters</a></li>
-          <li><a href="#jardineros-monos">Jardineros - Monos</a></li>
-          <li><a href="#sale">Sale</a></li>
+          <li><a href="#buzos">Buzos</a></li>
         </ul>
       </li>
       <li><a href="#accesorios">Accesorios</a></li>

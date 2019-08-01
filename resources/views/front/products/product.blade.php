@@ -28,15 +28,31 @@
           </select>
         </form>
     <br>
-        <form class="datos-talles" action="index " method="post">
-          <label class="dar-el-talle">talles</label>
-          <select class="elegir-talle" name="elegir-talles">
-            <option value="eleccion-talles" class="eleccion-talles">Elegir una opción</option>
-              <option value="S">SMALL</option>
-              <option value="M">MEDIUM</option>
-            <option value="L">LARGE</option>
-          </select>
-        </form>
+    <div class="col-12">
+      <div class="form-group">
+        <label class="imput-create">Colores: </label>
+        <div class="centrado">
+        @error('colors')
+         <span class="text-danger">
+           {{ $message }}
+         </span>
+       @enderror
+        <p class="form-control" name="colors">
+
+          @foreach ($colors as $color)
+          @if($productToEdit->colors->contains($color->id))
+          <input type="checkbox" name="colors[]" value="{{ $color->id }} " checked> {{ $color->name }}
+          @else
+          <input type="checkbox" name="colors[]" value=""> {{ $color->name }}
+          @endif
+
+          @endforeach
+          <br>
+        </p>
+        </div>
+      </div>
+      <br>
+      </div>
       </section>
       <br>
       <div>

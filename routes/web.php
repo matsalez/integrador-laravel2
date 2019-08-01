@@ -24,7 +24,8 @@ Route::get('/newarrivals', function () {
 Route::get('/newarrivals/product', function () {
     return view('front.products.product');
 });
-//Newproducts
+// Products del Admin
+
 Route::get('/products', 'ProductsController@index'); // Index para productos
 Route::get('/products/create', 'ProductsController@create'); // Formulario para crear
 Route::post('/products', 'ProductsController@store');
@@ -32,6 +33,8 @@ Route::get('/products/{id}', 'ProductsController@show'); // Para enviar los prod
 Route::put('/products/{id}', 'ProductsController@update'); // Ruta para actualizar una productos
 Route::get('/products/{id}/edit', 'ProductsController@edit'); // Formulario para editar
 Route::delete('/products/{id}', 'ProductsController@destroy'); // Ruta para borrar una productos
+
+
 
 //Faq
 Route::get('/faq', function () {
