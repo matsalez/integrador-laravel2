@@ -40,7 +40,7 @@
 
   <nav class="menu">
     <ul >
-      <li><a href="coleccion">Colección</a></li>
+      <li><a href="products ">Colección</a></li>
       <li class="submenu"><a href="#coleccion">Categorías  <i class="fas fa-angle-down"></i></a>
          <ul>
             <li><a href="newarrivals">New arrivals</a></li>
