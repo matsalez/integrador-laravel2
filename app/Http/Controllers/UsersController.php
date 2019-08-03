@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\users;
 use Illuminate\Http\Request;
+use App\User;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Foundation\Auth\RegistersUsers;
 
 class UsersController extends Controller
 {
@@ -14,7 +18,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -44,9 +48,12 @@ class UsersController extends Controller
      * @param  \App\users  $users
      * @return \Illuminate\Http\Response
      */
-    public function show(users $users)
+    public function show($id)
     {
-        //
+      // Busco al Usuario
+      $user = User::find($id);
+
+      return view('front.user.show', compact('user'));
     }
 
     /**
@@ -55,10 +62,13 @@ class UsersController extends Controller
      * @param  \App\users  $users
      * @return \Illuminate\Http\Response
      */
-    public function edit(users $users)
-    {
-        //
-    }
+     public function edit($id)
+   	{
+   		// Busco al Usuario
+   		$userToEdit = User::find($id);
+
+   		return view('front.user.edit', compact('userToEdit'));
+   	}
 
     /**
      * Update the specified resource in storage.
@@ -67,10 +77,32 @@ class UsersController extends Controller
      * @param  \App\users  $users
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, users $users)
-    {
-        //
-    }
+     public function update(Request $request, $id)
+     {
+       $userToEdit = User::find($id);
+
+       // Asocio atributos con valores
+       $userToEdit->name = $request->input('name');
+
+       // Obtengo el archivo que viene en el formulario (Objeto de Laravel) que tiene a su vez el archivo de la imagen
+       $image = $request->file('avatar'); // El value del atributo name del input file
+
+       if ($image) {
+         // Armo un nombre único para este archivo
+         $imageFinal = uniqid("img_") . "." . $image->extension();
+
+         // Subo el archivo en la carpeta elegida
+         $image->storePubliclyAs("public/images", $imageFinal);
+
+         // Le asigno la imagen al producto que guardamos
+         $userToEdit->avatar = $imageFinal;
+       }
+
+       $userToEdit->save();
+
+       // 3. Redireccionamos SIEMPRE a una RUTA
+       return redirect("/profile/$userToEdit->id");
+     }
 
     /**
      * Remove the specified resource from storage.

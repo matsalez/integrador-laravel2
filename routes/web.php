@@ -12,8 +12,6 @@ Route::get('/', function () {
     return view('front.index');
 });
 
-
-
 //Products
 
 Route::get('/newarrivals', function () {
@@ -42,13 +40,23 @@ Route::get('/faq', function () {
 });
 
 //Profile
-Route::get('/profile', function () {
-	if (Auth::user()) {
-		return view('front.user.index');
-	} else {
-		return redirect('/register');
-	}
-})->name('profile');
+// Route::get('/profile', function () {
+// 	if (Auth::user()) {
+// 		return view('front.user.index');
+// 	} else {
+// 		return redirect('/register');
+// 	}
+// })->name('profile');
+
+// ProfileController
+
+Route::get('/profile/{id}', 'UsersController@show');
+Route::put('/profile/{id}', 'UsersController@update');
+Route::get('/profile/{id}/edit', 'UsersController@edit');
+
+
+
+//Authentication route Laravel
 
 Auth::routes();
 

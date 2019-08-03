@@ -2,7 +2,7 @@
     <input type="checkbox" id="btn-menu">
     <label for="btn-menu" class="fas fa-bars boton-menu"> </label>
     <a href="/">
-      <img class="logo-menu" src="../images/logo.png" alt="logo-isabella">
+      <img class="logo-menu" src="/images/logo.png" alt="logo-isabella">
       </a>
     <ul class="iconos-menu">
       <aside class="cambios">
@@ -22,7 +22,7 @@
         <li><a href=register> <span>Registrate</span><i class="fas fa-user-plus"></i></a></li>
         <li><a href=login> <span>ingresá</span><i class="fas fa-user"></i></a></li>
       @else
-        <li><a href=profile> <span>Hola {{ Auth::user()->name }}</span><i class="fas fa-user-circle"></i></a></li>
+        <li><a href=profile/{{ Auth::user()->id }}> <span>Hola {{ Auth::user()->name }}</span><i class="fas fa-user-circle"></i></a></li>
         <li><a class="dropdown-item" href="{{ route('logout') }}"
             onclick="
             event.preventDefault();
