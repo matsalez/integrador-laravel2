@@ -1,11 +1,11 @@
 <?php
 
 
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Category;
 
 class ProductsController extends Controller
 {
@@ -22,6 +22,15 @@ class ProductsController extends Controller
       return view('front/products/allproducts', compact('products','totalProducts'));
     }
 
+    public function categories($id)
+    {
+
+      $products = Product::simplePaginate(8);
+      $productsCat = Product::where("category_id", $id)->get();
+
+      return view('front/categories/index', compact('products','productsCat'));
+    }
+
     public function show($id)
     {
       $colors = \App\Color::orderBy('name')->get();
@@ -31,6 +40,17 @@ class ProductsController extends Controller
       $theProduct = Product::find($id);
 
       return view('front.products.show', compact('theProduct','colors','sizes','categories'));
+    }
+
+    public function thanks($id)
+    {
+      $colors = \App\Color::orderBy('name')->get();
+      $sizes = \App\Size::orderBy('name')->get();
+      $categories = \App\Category::orderBy('name')->get();
+
+      $theProduct = Product::find($id);
+
+      return view('front.products.thanks', compact('theProduct','colors','sizes','categories'));
     }
 
     public function create()

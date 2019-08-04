@@ -55,12 +55,18 @@
 
 	      </section>
 	      <br>
-	      <div>
-	        <button type="submit" name="comprar" class="boton-crear" style="height:30px">COMPRAR</button>
-	      </div>
+				@if(Auth::user() &&  Auth::user()->admin == 0)
+				<div class="boton">
+				<a href="/products/{{ $theProduct->id }}/thanks" > COMPRAR  </a>
+				</div>
+				@else
+				<div class="boton">
+				<a href="/login" > COMPRAR  </a>
+				</div>
+				@endif
 	    </div>
 	  </div>
 	</div>
-	<a class="volver "href="/"> << Productos </a>
+	<a class="volver "href="/"> VOLVER </a>
 	</div>
 @endsection

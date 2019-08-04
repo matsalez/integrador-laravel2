@@ -14,16 +14,16 @@
   <div class="row">
     <div class="col-lg-3 col-md-6 col-xs-12">
       <div class="home-seccion">
-        <a class="imagen-home" href="newarrivals">
+        <a class="imagen-home" href="/categories/3">
           <img class="home-seccion-img"src="images/foto-05.jpg" alt="newarrivals">
         </a>
-          <h2 class="home-title-seccion"> //NEW ARRIVALS </h2>
+          <h2 class="home-title-seccion"> CAMPERAS </h2>
 
     </div>
     </div>
     <div class="col-lg-3 col-md-6 col-xs-12">
       <div class="home-seccion">
-        <a class="imagen-home" href="newarrivals">
+        <a class="imagen-home" href="/categories/2">
           <img class="home-seccion-img" src="images/foto-06.jpg" alt="lookbook">
           </a>
           <h2 class="home-title-seccion"> PANTALONES </h2>
@@ -31,7 +31,7 @@
     </div>
     <div class="col-lg-3 col-md-6 col-xs-12">
       <div class="home-seccion">
-        <a class="imagen-home" href="newarrivals">
+        <a class="imagen-home" href="/categories/1">
           <img class="home-seccion-img" src="images/foto-07.jpg" alt="coleccion">
             </a>
           <h2 class="home-title-seccion"> REMERAS </h2>
@@ -39,7 +39,7 @@
     </div>
     <div class="col-lg-3 col-md-6 col-xs-12">
       <div class="home-seccion">
-        <a class="imagen-home" href="newarrivals">
+        <a class="imagen-home" href="/categories/5">
         <img class="home-seccion-img" src="images/foto-08.jpg" alt="accesorios">
           </a>
         <h2 class="home-title-seccion"> BUZOS </h2>
@@ -49,7 +49,7 @@
   <div class="row">
     <div class="col-12">
       <div class="hastag">
-        <h2 class="title-hastag"> #AlwaysANewlook</h2>
+        <a href="/categories/4" class="title-hastag"> #AlwaysANewlook</a>
       </div>
     </div>
   </div>

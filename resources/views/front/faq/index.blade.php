@@ -1,6 +1,6 @@
 @extends('front.template')
 
-@section('pageTitle', 'Productos')
+@section('pageTitle', 'FAQ')
 
 @section('mainContent')
 

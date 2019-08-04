@@ -4,9 +4,11 @@
 
 @section('mainContent')
 <br>
-	<div class="listado">Listado de productos</div>
 
+	@if(Auth::user() &&  Auth::user()->admin == 1)
+	<div class="listado">Listado de productos</div>
 	<p class="cant-productos">En nuestra base de datos hay un total de: {{ $totalProducts }} de productos.</p>
+	@endif
 
 
 
@@ -36,8 +38,15 @@
             			{{ method_field('delete') }}
 
                   	<button class="boton-borrar" type="submit">BORRAR</button>
+									</form>
+								@else
+
+								<div class="boton">
+                <a href="/products/{{ $product->id }}" > VER PRODUCTO  </a>
+                </div>
+
 								@endif
-                </form>
+
                   </div>
                   </div>
                   @endforeach
