@@ -79,6 +79,8 @@ class UsersController extends Controller
 
        // Asocio atributos con valores
        $userToEdit->name = $request->input('name');
+       $userToEdit->country = $request->input('country');
+       $userToEdit->city = $request->input('city');
 
        // Obtengo el archivo que viene en el formulario (Objeto de Laravel) que tiene a su vez el archivo de la imagen
        $image = $request->file('avatar'); // El value del atributo name del input file
