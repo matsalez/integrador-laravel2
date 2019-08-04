@@ -30,9 +30,10 @@ Route::group(['middleware' => 'admin'], function () {
 });
 
   Route::get('/products', 'ProductsController@index'); // Index para productos
-  Route::get('/products/{id}', 'ProductsController@show');
   Route::get('/products/{id}/thanks', 'ProductsController@thanks'); // Para enviar los productos al formulario
 
+  Route::get('/products/result/', 'ProductsController@result');
+  Route::get('/products/{id}', 'ProductsController@show');
 
 //Faq
 Route::get('/faq', function () {
@@ -48,7 +49,7 @@ Route::get('/profile/{id}/edit', 'UsersController@edit');
 
 //categories
 
-  Route::get('/categories/{id}', 'ProductsController@categories'); // Index para productos
+Route::get('/categories/{id}', 'ProductsController@categories'); // Index para productos
 
 //Authentication route Laravel
 

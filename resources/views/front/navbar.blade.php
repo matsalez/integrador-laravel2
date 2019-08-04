@@ -10,8 +10,8 @@
       <br>
 
       </aside>
-      <li><form class="formulario" method="get" action="procesar.php">
-          <input type="text" name="termino_busqueda"> </li>
+      <li><form class="formulario" method="get" action="/products/result/">
+          <input type="text" name="word"> </li>
           <button class="submit-search" type="submit" name="button"> <i class="fas fa-search"></i></button>
           </form>
       <li><a href=#shop><span>Tu Carrito</span>  <i class="fas fa-shopping-cart"></i></a></li>

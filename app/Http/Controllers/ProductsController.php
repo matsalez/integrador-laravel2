@@ -193,4 +193,13 @@ class ProductsController extends Controller
     }
 
 
+    public function result(Request $request)
+    {
+
+
+      $products = Product::where('name', 'LIKE', '%' . $request->word . '%')->get();
+
+      return view('front.products.result', compact('products'));
+    }
+
 }
