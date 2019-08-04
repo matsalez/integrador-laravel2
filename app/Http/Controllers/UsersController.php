@@ -11,11 +11,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 
 class UsersController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
 
@@ -112,6 +108,6 @@ class UsersController extends Controller
      */
     public function destroy(users $users)
     {
-        //
+
     }
 }

@@ -25,7 +25,7 @@ Route::get('/newarrivals/product', function () {
 });
 // Products del Admin
 Route::group(['middleware' => 'admin'], function () {
-    Route::get('/products', 'ProductsController@index'); // Index para productos
+
     Route::get('/products/{id}/edit', 'ProductsController@edit'); // Formulario para editar
     Route::get('/products/create', 'ProductsController@create'); // Formulario para crear
     Route::post('/products', 'ProductsController@store');
@@ -33,7 +33,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::delete('/products/{id}', 'ProductsController@destroy'); // Ruta para borrar una productos
 });
 
-
+  Route::get('/products', 'ProductsController@index'); // Index para productos
   Route::get('/products/{id}', 'ProductsController@show'); // Para enviar los productos al formulario
 
 
