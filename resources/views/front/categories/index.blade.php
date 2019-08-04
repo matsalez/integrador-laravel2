@@ -1,6 +1,6 @@
 @extends('front.template')
 
-@section('pageTitle', 'Estas viendo: ')
+@section('pageTitle', 'Estas viendo: ' . $categories->name)
 
 @section('mainContent')
 

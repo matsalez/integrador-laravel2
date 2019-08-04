@@ -24,11 +24,12 @@ class ProductsController extends Controller
 
     public function categories($id)
     {
+      $categories = Category::find($id);
 
       $products = Product::simplePaginate(8);
       $productsCat = Product::where("category_id", $id)->get();
 
-      return view('front/categories/index', compact('products','productsCat'));
+      return view('front/categories/index', compact('products','productsCat','categories'));
     }
 
     public function show($id)
