@@ -19,7 +19,7 @@
         <li><a href=/register> <span>Registrate</span><i class="fas fa-user-plus"></i></a></li>
         <li><a href=/login> <span>ingresá</span><i class="fas fa-user"></i></a></li>
       @else
-        <li><a href=profile/{{ Auth::user()->id }}> <span>Hola {{ Auth::user()->name }}</span><i class="fas fa-user-circle"></i></a></li>
+        <li><a href=/profile/{{ Auth::user()->id }}> <span>Hola {{ Auth::user()->name }}</span><i class="fas fa-user-circle"></i></a></li>
         <li><a class="dropdown-item" href="{{ route('logout') }}"
             onclick="
             event.preventDefault();
@@ -37,7 +37,7 @@
 
   <nav class="menu">
     <ul >
-      <li><a href="products ">Colección</a></li>
+      <li><a href="/products ">Colección</a></li>
       <li class="submenu"><a href="#coleccion">Categorías  <i class="fas fa-angle-down"></i></a>
          <ul>
            <li><a href="/categories/1">Remeras</a></li>
