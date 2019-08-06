@@ -53,8 +53,15 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'avatar' => ['required'],
             'country' => ['required'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:8', 'confirmed','regex:/DH/'],
+
+            [
+              'required' => 'El campo :attribute es obligatorio',
+
+            ]
         ]);
+
+
     }
 
 

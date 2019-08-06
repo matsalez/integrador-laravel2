@@ -18,8 +18,8 @@
                                 type="text"
                                 class="form-control"
                                 name="name"
-                                value="{{ old('name') }}"
-                                required autocomplete="name"
+                                value="{{ $errors->has('name') ? null : old('name') }}"
+                                autocomplete="name"
                                 autofocus
                                 data-nombre='Nombre'
                                 >
@@ -28,7 +28,7 @@
                       					</div>
 
                                 @error('name')
-                                    <span class="text-danger" role="alert">
+                                    <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
@@ -45,7 +45,7 @@
                                 class="form-control"
                                 name="email"
                                 value="{{ old('email') }}"
-                                required autocomplete="email"
+                                autocomplete="email"
                                 data-nombre='Email'
                                 >
 
@@ -71,7 +71,7 @@
                                 class="form-control"
                                 name="avatar"
                                 value="{{ old('avatar') }}"
-                                required autocomplete="avatar"
+                                autocomplete="avatar"
                                 data-nombre="imagen"
                                 >
 
@@ -93,8 +93,8 @@
                                 <input
                                 id="password"
                                 type="password"
-                                class="form-control @error('password') is-invalid @enderror" name="password"
-                                required autocomplete="new-password"
+                                class="form-control" name="password"
+                                autocomplete="new-password"
                                 data-nombre="Contraseña"
                                 >
 
@@ -119,7 +119,7 @@
                                 type="password"
                                 class="form-control"
                                 name="password_confirmation"
-                                required autocomplete="new-password"
+                                autocomplete="new-password"
                                 data-nombre="Confirmar contraseña"
                                 >
 
@@ -131,7 +131,6 @@
                         <br>
                         <div class="form-group row">
                             <label for="country" class="col-3 col-form-label text-md-right">País</label>
-
                             <div class="col-9">
                               <select
                                 class="form-control"
@@ -155,9 +154,9 @@
                         </div>
                         <br>
                         <div class="form-group row" style="display: none;">
-                            <label for="country" class="col-3 col-form-label text-md-right">Provincia:</label>
+                            <label for="city" class="col-2 col-form-label text-md-right">Provincia:</label>
 
-                            <div class="col-9">
+                            <div class="col-2">
                               <select
                                 class="form-control"
                                 name="city"
@@ -171,7 +170,7 @@
 
                               </div>
                                 @error('provincia')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="text-danger" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
