@@ -2,7 +2,7 @@
 @section('pageTitle', 'Registro')
 @yield('content')
 @section('content')
-<div class="container formulario-registro">
+<div class="formulario-registro">
     <div class="row justify-content-center">
         <div class="col-12">
 
@@ -10,15 +10,15 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="name" class="col-3 col-form-label text-md-right">{{ __('Nombre') }}</label>
+                            <label for="name" class="col-md-3 col-xs-12 col-form-label text-md-right">{{ __('Nombre') }}</label>
 
-                            <div class="col-9">
+                            <div class="col-md-9 col-xs-12">
                                 <input
                                 id="name"
                                 type="text"
                                 class="form-control"
                                 name="name"
-                                value="{{ $errors->has('name') ? null : old('name') }}"
+                                value="{{ old('name') }}"
                                 autocomplete="name"
                                 autofocus
                                 data-nombre='Nombre'
@@ -28,7 +28,7 @@
                       					</div>
 
                                 @error('name')
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="text-danger" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
@@ -36,9 +36,9 @@
                         </div>
                         <br>
                         <div class="form-group row">
-                            <label for="email" class="col-3 col-form-label text-md-right">{{ __('E-Mail') }}</label>
+                            <label for="email" class="col-md-3 col-xs-12 col-form-label text-md-right">{{ __('E-Mail') }}</label>
 
-                            <div class="col-9">
+                            <div class="col-md-9 col-xs-12">
                                 <input
                                 id="email"
                                 type="email"
@@ -62,9 +62,9 @@
                         </div>
                         <br>
                         <div class="form-group row">
-                            <label for="avatar" class="col-3 col-form-label text-md-right">{{ __('Subí tu imagen') }}</label>
+                            <label for="avatar" class="col-md-3 col-xs-12 col-form-label text-md-right">{{ __('Subí tu imagen') }}</label>
 
-                            <div class="col-9">
+                            <div class="col-md-9 col-xs-12">
                                 <input
                                 id="avatar"
                                 type="file"
@@ -87,14 +87,14 @@
                         </div>
                         <br>
                         <div class="form-group row">
-                            <label for="password" class="col-3 col-form-label text-md-right">{{ __('Contraseña') }}</label>
+                            <label for="password" class="col-md-3 col-xs-12 col-form-label text-md-right">{{ __('Contraseña') }}</label>
 
-                            <div class="col-9">
+                            <div class="col-md-9 col-xs-12">
                                 <input
                                 id="password"
                                 type="password"
-                                class="form-control" name="password"
-                                autocomplete="new-password"
+                                class="form-control @error('password') is-invalid @enderror" name="password"
+                                required autocomplete="new-password"
                                 data-nombre="Contraseña"
                                 >
 
@@ -111,9 +111,9 @@
                         </div>
                         <br>
                         <div class="form-group row">
-                            <label for="password-confirm" class="col-3 col-form-label text-md-right">{{ __('Confirma Contraseña') }}</label>
+                            <label for="password-confirm" class="col-md-3 col-xs-12 col-form-label text-md-right">{{ __('Confirma Contraseña') }}</label>
 
-                            <div class="col-9">
+                            <div class="col-md-9 col-xs-12">
                                 <input
                                 id="password-confirm"
                                 type="password"
@@ -130,8 +130,9 @@
                         </div>
                         <br>
                         <div class="form-group row">
-                            <label for="country" class="col-3 col-form-label text-md-right">País</label>
-                            <div class="col-9">
+                            <label for="country" class="col-md-3 col-xs-12 col-form-label text-md-right">País</label>
+
+                            <div class="col-md-9 col-xs-12">
                               <select
                                 class="form-control"
                                 name="country"
@@ -154,9 +155,9 @@
                         </div>
                         <br>
                         <div class="form-group row" style="display: none;">
-                            <label for="city" class="col-2 col-form-label text-md-right">Provincia:</label>
+                            <label for="country" class="col-md-3 col-xs-12 col-form-label text-md-right">Provincia:</label>
 
-                            <div class="col-2">
+                            <div class=" col-md-9 col-xs-8">
                               <select
                                 class="form-control"
                                 name="city"
@@ -170,7 +171,7 @@
 
                               </div>
                                 @error('provincia')
-                                    <span class="text-danger" role="alert">
+                                    <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
