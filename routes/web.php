@@ -8,16 +8,7 @@ Route::get('/', function () {
     return view('front.index');
 });
 
-//Products
 
-// Route::get('/newarrivals', function () {
-//     return view('front.products.index');
-// });
-
-// //One product
-// Route::get('/newarrivals/product', function () {
-//     return view('front.products.product');
-// });
 
 // Products del Admin
 Route::group(['middleware' => 'admin'], function () {
