@@ -16,17 +16,15 @@ class Product extends Model
   public function colors()
 	{
 		return $this->belongsToMany(Color::class)->withTimestamps();
-	}
-
+}
   public function sizes()
 	{
 		return $this->belongsToMany(Size::class)->withTimestamps();
-	}
+}
 
-	public function category()
+  public function category()
 	{
 		return $this->belongsTo(Category::class);
-	}
-
+}
 
 }

@@ -10,6 +10,6 @@ class Color extends Model
 
 	public function products()
 	{
-		return $this->belongsToMany(Product::class)->withTimestamps();
+		return $this->belongsToMany(Product::class)->withTimestamps(); // Relacion de muchos colores con muchos productos
 	}
 }

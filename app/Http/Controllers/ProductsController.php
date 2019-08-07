@@ -185,7 +185,7 @@ class ProductsController extends Controller
 
       $productToEdit->save();
 
-      $productToEdit->colors()->attach($request->input('colors'));
+      $productToEdit->colors()->attach($request->input('colors')); //Inserta modelos relacionados cuando trabaja con relaciones de muchos a muchos 
       $productToEdit->sizes()->attach($request->input('sizes'));
 
       // 3. Redireccionamos SIEMPRE a una RUTA
