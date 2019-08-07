@@ -117,8 +117,9 @@ h3.detalle-title-product {
 }
 
 .boton-borrar{
+  cursor: pointer;
   background-color: red;
-  width: 294px;
+  width: 100%;
   border: none;
   display: flex;
   justify-content: center;
