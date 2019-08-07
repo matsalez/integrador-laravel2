@@ -44,7 +44,7 @@
     <div class="col-lg-3 col-md-6 col-xs-12">
       <div class="home-seccion">
         <a class="imagen-home" href="/categories/3">
-          <img class="home-seccion-img"src="images/foto-05.jpg" alt="newarrivals">
+          <img class="home-seccion-img zoom"src="images/foto-05.jpg" alt="newarrivals">
         </a>
           <h2 class="home-title-seccion"> CAMPERAS </h2>
 
@@ -53,7 +53,7 @@
     <div class="col-lg-3 col-md-6 col-xs-12">
       <div class="home-seccion">
         <a class="imagen-home" href="/categories/2">
-          <img class="home-seccion-img" src="images/foto-06.jpg" alt="lookbook">
+          <img class="home-seccion-img zoom" src="images/foto-06.jpg" alt="lookbook">
           </a>
           <h2 class="home-title-seccion"> PANTALONES </h2>
       </div>
@@ -61,7 +61,7 @@
     <div class="col-lg-3 col-md-6 col-xs-12">
       <div class="home-seccion">
         <a class="imagen-home" href="/categories/1">
-          <img class="home-seccion-img" src="images/foto-07.jpg" alt="coleccion">
+          <img class="home-seccion-img zoom" src="images/foto-07.jpg" alt="coleccion">
             </a>
           <h2 class="home-title-seccion"> REMERAS </h2>
       </div>
@@ -69,7 +69,7 @@
     <div class="col-lg-3 col-md-6 col-xs-12">
       <div class="home-seccion">
         <a class="imagen-home" href="/categories/5">
-        <img class="home-seccion-img" src="images/foto-08.jpg" alt="accesorios">
+        <img class="home-seccion-img zoom" src="images/foto-08.jpg" alt="accesorios">
           </a>
         <h2 class="home-title-seccion"> BUZOS </h2>
       </div>
@@ -111,5 +111,16 @@
   </div>
 </div>
 
+<script>
+  $(document).ready(function(){
+      $('.zoom').hover(function() {
+          $(this).addClass('transition');
+      }, function() {
+          $(this).removeClass('transition');
+      });
+  });
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="/js/home.js"></script>
 @endsection

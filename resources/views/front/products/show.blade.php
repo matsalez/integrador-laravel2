@@ -10,6 +10,7 @@
 	    <div class="col-12 col-md-9">
 	      <div class="img-product">
 	        <img src="/storage/images/{{ $theProduct->poster }}"  alt="Responsive image" style="width:40%">
+
 	      </div>
 	    </div>
 	    <div class="col-12 col-md-3">
@@ -69,4 +70,6 @@
 	</div>
 	<a class="volver "href="/"> VOLVER </a>
 	</div>
+
+
 @endsection

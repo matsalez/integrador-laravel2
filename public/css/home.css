@@ -346,6 +346,21 @@ padding-right: 3%;
   animation-duration: 1.5s;
 }
 
+img.zoom {
+    width: 100%;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+}
+
+.transition {
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    transform: scale(1.05);
+}
+
 @-webkit-keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
